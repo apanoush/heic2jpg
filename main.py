@@ -5,11 +5,11 @@ import argparse
 
 def main(args):
 
-    # checks if data folder exists
+    # checks if --src folder exists
     if not (os.path.exists(args.src)):
         raise Exception("not folder called \"%s\" found, it should contain all .heic photos to be converted" %(args.src))
 
-    # creates jpgs directory where converted photos will be stored
+    # creates --dst directory (if it doesn't exist already) where converted photos will be stored
     if not (os.path.exists(args.dst)):
         os.mkdir(args.dst)
 
