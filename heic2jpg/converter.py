@@ -4,12 +4,13 @@ import os
 def converter(images, dst):
     directory = os.path.join(dst)
     counter = 0
-    for e in images:
-        image = Image.open(e)
-        #jpg = image.replace('.HEIC', '.jpg')
+    for path, filename in images:
+        image = Image.open(path)
         #image.save(f"{directory}/{image}.jpg", "JPEG")
-        image.save('test.jpg', quality=100)
+        filename_no_extension, _ = os.path.splitext(filename)
+        image.save(f"{directory}/{filename_no_extension}.jpg", quality=100, subsampling=0)
         counter += 1
-        print("%d file(s) converted: %s" % ( counter, image) , end="\r")
+        print("%d file(s) converted: %s" % ( counter, filename) , end="\r")
 
-    print("finished, all %d photos have been converted to .jpg:)" %(counter))
+    print("")
+    print("finished, all %d photo(s) have been converted to .jpg:)" %(counter))
