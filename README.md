@@ -4,7 +4,7 @@ searches for `.heic` photos in the `--src` folder, convert all of them to `.jpg`
 
 ## why
 
-apple icloud photos (through their website) only accepts .jpg photos while google photos export .heic photos taken on an iphone
+apple icloud photos (through their website) only accepts `.jpg` photos while google photos export photos taken on an iphone with the `.heic` format
 
 ## usage
 
