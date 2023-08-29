@@ -1,5 +1,7 @@
 # heic2jpg
 
+searches for `.heic` photos in the `--src` folder, convert all of them to `.jpg` photos and saves them in the `--dst` folder
+
 ## why
 
 apple icloud photos (through their website) only accepts .jpg photos while google photos export .heic photos taken on an iphone
