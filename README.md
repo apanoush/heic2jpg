@@ -12,3 +12,9 @@ apple icloud photos (through their website) only accepts `.jpg` photos while goo
 
 - `--src`: folder where are stored the `.heic` photo, **optional**, default is "`data`"
 - `--dst`: folder that will be created where the `.jpg` photos will be stored, **optional**, default is "`jpgs`"
+
+
+## dependencies
+
+uses `Pillow`.
+you can install it using `pip install Pillow`
