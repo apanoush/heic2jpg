@@ -19,8 +19,12 @@ def converter(images, dst):
         # saving metadata
         exif = image.getexif()
 
+        # if image not in RGB mode, converts it
+        if not (image.mode == 'RGB'):
+            image = image.convert('RGB')
+
         # converting/saving the image
-        image.save(f"{directory}/{filename_no_extension}.jpg", quality=95, exif=exif)
+        image.save(f"{directory}/{filename_no_extension}.jpg", quality=95, exif=exif, format="JPEG")
 
         counter += 1
         print("%d file(s) converted: %s" % ( counter, filename) , end="\r")
