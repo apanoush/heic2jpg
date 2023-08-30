@@ -12,8 +12,15 @@ def converter(images, dst):
 
         # image conversion
         image = Image.open(path)
+
+        # saving the filename
         filename_no_extension, _ = os.path.splitext(filename)
-        image.save(f"{directory}/{filename_no_extension}.jpg", quality=100, subsampling=0)
+
+        # saving metadata
+        exif = image.getexif()
+
+        # converting/saving the image
+        image.save(f"{directory}/{filename_no_extension}.jpg", quality=95, exif=exif)
 
         counter += 1
         print("%d file(s) converted: %s" % ( counter, filename) , end="\r")
