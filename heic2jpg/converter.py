@@ -9,6 +9,8 @@ def converter(images, dst, length):
 
     counter = 0
 
+    not_converted_path = os.path.join(dst, "not converted images")
+
     for path, filename in images:
 
         try:
@@ -16,16 +18,21 @@ def converter(images, dst, length):
             image = Image.open(path)
 
         except UnidentifiedImageError:
-            
+
             print(f"{filename} cannot be converted, it will be copied to the \"not converted images\" folder")
 
             # creating "not created" directory 
-            not_converted_path = os.path.join(dst, "not converted images")
             if not (os.path.exists(not_converted_path)):
                 os.mkdir(not_converted_path)
 
             # copying the not converted file to the directory
             shutil.copy(src=path, dst=not_converted_path)
+
+            continue
+
+        except FileNotFoundError:
+
+            print(f"{filename} cannot be found, it will be skipped")
 
             continue
 
