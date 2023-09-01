@@ -14,14 +14,14 @@ def main(args):
         os.mkdir(args.dst)
 
     # finds all .heic photos in --src
-    images = heic2jpg.list_files.list_files(args.src)
+    images, length = heic2jpg.list_files.list_files(args.src)
 
     # if no .heic file found raise an error
-    if (len(images) == 0): 
+    if (length == 0): 
         raise Exception("no .heic photo found in %s" %(args.src))
 
     # converts all these photos to .jpg and saves them in --dst
-    heic2jpg.converter.converter(images, args.dst)
+    heic2jpg.converter.converter(images, args.dst, length)
 
 if __name__ == "__main__":
     # all arguments

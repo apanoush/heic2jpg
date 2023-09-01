@@ -1,6 +1,7 @@
 # heic2jpg
 
-searches for `.heic` photos in the `--src` folder, convert all of them to `.jpg` photos and saves them in the `--dst` folder
+searches for `.heic` photos in the `--src` folder, convert all of them to `.jpg` photos and saves them in the `--dst` folder.
+if an image can't converted, it will be copied to the `--dst/not converted images` folder
 
 ## why
 

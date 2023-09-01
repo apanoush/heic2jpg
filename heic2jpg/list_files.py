@@ -10,6 +10,7 @@ def list_files(src):
         for filename in [f for f in filenames if f.lower().endswith(".heic")]:
             images.append( (os.path.join(path, filename), filename) )
     
-    print("%d .heic images found in \"%s\"" % (len(images), src))
+    length = len(images)
+    print("%d .heic images found in \"%s\"" % (length, src))
 
-    return images
+    return images, length
